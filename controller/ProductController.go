@@ -7,12 +7,12 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type UserController struct {
-	userService *service.ProductService
+type ProductController struct {
+	productService *service.ProductService
 }
 
-func NewUserController(userService *service.ProductService) *UserController {
-	return &UserController{userService}
+func NewProductController(productService *service.ProductService) *ProductController {
+	return &ProductController{productService}
 }
 
 // @Summary		Get User By Id
@@ -21,7 +21,7 @@ func NewUserController(userService *service.ProductService) *UserController {
 // @Param product_name body request.ProductRequest false "product_name"
 // @Success		200	{object} model.Product
 // @Router			/product [post]
-func (uc *UserController) GetListProductByName(c *gin.Context) {
+func (uc *ProductController) GetListProductByName(c *gin.Context) {
 	request := request.ProductRequest{}
 	if err := c.ShouldBindJSON(&request); err != nil {
 		c.JSON(400, response.Response{
@@ -30,7 +30,7 @@ func (uc *UserController) GetListProductByName(c *gin.Context) {
 		})
 	}
 
-	data, err := uc.userService.GetListProductByName(request.Name)
+	data, err := uc.productService.GetListProductByName(request.Name)
 	if err != nil {
 		c.JSON(400, response.Response{
 			Status:  "error",

@@ -18,8 +18,8 @@ func main() {
 	db := config.GetDB()
 
 	productRepository := repository.NewProductRepository(db)
-	productService := service.NewUserService(productRepository)
-	productController := controller.NewUserController(productService)
+	productService := service.NewProductService(productRepository)
+	productController := controller.NewProductController(productService)
 
 	docs.SwaggerInfo.Title = "Ana Store - Environment: "
 	docs.SwaggerInfo.Description = "API for product service"

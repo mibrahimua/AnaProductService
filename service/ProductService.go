@@ -9,8 +9,8 @@ type ProductService struct {
 	productRepository *repository.ProductRepository
 }
 
-func NewUserService(userRepository *repository.ProductRepository) *ProductService {
-	return &ProductService{userRepository}
+func NewProductService(productRepository *repository.ProductRepository) *ProductService {
+	return &ProductService{productRepository}
 }
 
 func (us *ProductService) GetListProductByName(productName string) ([]model.Product, error) {
