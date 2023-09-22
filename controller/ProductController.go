@@ -15,8 +15,8 @@ func NewProductController(productService *service.ProductService) *ProductContro
 	return &ProductController{productService}
 }
 
-// @Summary		Get User By Id
-// @Description	Get User By Id
+// @Summary		Get List of product
+// @Description	Get List of product
 // @Produce		json
 // @Param product_name body request.ProductRequest false "product_name"
 // @Success		200	{object} model.Product

@@ -26,7 +26,7 @@ info:
 paths:
   /product:
     post:
-      description: Get User By Id
+      description: Get List of product
       parameters:
       - description: product_name
         in: body
@@ -40,5 +40,5 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/model.Product'
-      summary: Get User By Id
+      summary: Get List of product
 swagger: "2.0"

@@ -18,11 +18,11 @@ const docTemplate = `{
     "paths": {
         "/product": {
             "post": {
-                "description": "Get User By Id",
+                "description": "Get List of product",
                 "produces": [
                     "application/json"
                 ],
-                "summary": "Get User By Id",
+                "summary": "Get List of product",
                 "parameters": [
                     {
                         "description": "product_name",
